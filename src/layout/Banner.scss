@@ -1,0 +1,44 @@
+@use "../scss/variables.scss" as *;
+
+.banner {
+  overflow: hidden;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  padding-inline: 2rem;
+  background-image: url("../../public/banner.png");
+  min-height: 223px;
+  margin: auto;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  color: $color-tertiary;
+  margin-bottom: 2rem;
+  max-width: 100%;
+  @media screen and (max-width: 768px) { 
+    justify-content: left;
+  }
+  &::before {
+    position: absolute;
+    border-radius: 25px;
+    content: "";
+    inset: 0;
+    opacity: 0.6;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    z-index: 0;
+  }
+  h2 {
+    z-index: 1;
+    font-size: 48px;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+    @media screen and (max-width: 768px) { 
+      font-size: 24px;
+      text-shadow: none;
+      width: 225px;
+    }
+  }
+}
+

@@ -1,0 +1,26 @@
+@use "../scss/variables.scss" as colors;
+
+.grid {
+  background-color: colors.$background-dark;
+  min-height: 50vh;
+  border-radius: 25px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* 3 colonnes de largeur égale */
+  flex-wrap: wrap;
+  gap: 55px;
+  padding: 55px;
+  justify-content: center; /* Centre horizontalement */
+  & > * {
+    justify-content: center;
+    display: flex;
+  }
+}
+
+@media screen and (width <= 768px) {
+  .grid {
+    justify-content: center;
+    background-color: colors.$grid-background-light;
+    padding: 0;
+    grid-template-columns: 1fr;
+  }
+}
