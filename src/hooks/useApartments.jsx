@@ -4,7 +4,7 @@ export const useApartments = () => {
   const [apartments, setApartments] = useState([]);
   useEffect(() => {
     const abortController = new AbortController();
-    fetch("annonces.json", { signal: abortController.signal })
+    fetch("annonces.json")
       .then((res) => res.json())
       .then((res) => setApartments(res))
       .catch(console.error);

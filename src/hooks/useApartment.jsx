@@ -8,7 +8,7 @@ export function useApartment() {
   
   useEffect(() => {
     const abortController = new AbortController();
-    fetch("/annonces.json", { signal: abortController.signal })
+    fetch("/annonces.json")
       .then((res) => res.json())
       .then((flats) => {
         if(location.state == null) navigate("/error");
